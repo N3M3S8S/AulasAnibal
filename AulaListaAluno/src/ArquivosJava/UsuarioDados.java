@@ -1,5 +1,9 @@
 package ArquivosJava;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class UsuarioDados {
     //Criando atributos
     private String nome;
@@ -49,5 +53,8 @@ public class UsuarioDados {
         this.notas = notas;
     }    
     
-    
+    public void cadastrar() throws IOException {
+        File lista = new File("Alunos.csv");
+        FileWriter arquivo;
+    }
 }
