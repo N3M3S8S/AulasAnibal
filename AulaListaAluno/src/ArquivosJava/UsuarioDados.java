@@ -48,4 +48,6 @@ public class UsuarioDados {
     public void setNotas(float[] notas) {
         this.notas = notas;
     }    
+    
+    
 }
