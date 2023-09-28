@@ -17,6 +17,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
      */
     public InterfacePrincipal() {
         initComponents();
+        recarregaTelaCadastrar();
     }
     
     private void carregaListaUsuarios() {
