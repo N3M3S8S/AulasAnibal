@@ -71,6 +71,22 @@ public class UsuarioDados {
         this.notas = notas;
     }    
     
+    public void cadastrar() throws IOException {
+        File file = new File("Usuarios.csv");
+        FileWriter arquivo;
+        if(!file.exists()) {
+            file.createNewFile();
+            String cabecalho = "nome,email,login,senha,telefone";
+            arquivo = new FileWriter(file, true);
+            arquivo.write(cabecalho+"\r\n");
+            arquivo.close();
+        }
+        arquivo = new FileWriter(file, true);
+        String text = nome+","+email+","+login+","+senha+","+telefone+"\r\n";
+        arquivo.write(text);
+        arquivo.close();
+    }
+    
     public List<UsuarioDados> getUsuarios() throws FileNotFoundException {
         File file = new File("Usuarios.csv");
         List<UsuarioDados> listaUsuarios = new ArrayList<UsuarioDados>();
@@ -90,21 +106,5 @@ public class UsuarioDados {
             listaUsuarios.add(user);
         }
         return listaUsuarios;
-    }
-    
-    public void cadastrar() throws IOException {
-        File file = new File("Usuarios.csv");
-        FileWriter arquivo;
-        if(!file.exists()) {
-            file.createNewFile();
-            String cabecalho = "nome,email,login,senha,telefone";
-            arquivo = new FileWriter(file, true);
-            arquivo.write(cabecalho+"\r\n");
-            arquivo.close();
-        }
-        arquivo = new FileWriter(file, true);
-        String text = nome+","+email+","+login+","+senha+","+telefone+"\r\n";
-        arquivo.write(text);
-        arquivo.close();
     }
 }
