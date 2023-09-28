@@ -1,7 +1,6 @@
 package Interfaces;
 
 import ArquivosJava.UsuarioDados;
-import ArquivosJava.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
@@ -17,7 +16,6 @@ public class InterfacePrincipal extends javax.swing.JFrame {
      */
     public InterfacePrincipal() {
         initComponents();
-        recarregaTelaCadastrar();
     }
     
     private void carregaListaUsuarios() {
